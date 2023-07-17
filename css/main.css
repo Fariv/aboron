@@ -1,0 +1,283 @@
+@font-face {
+    font-family: 'Li Alinur Projapoti Unicode';
+    src: url('fonts/alinurprojapoti/LiAlinurProjapotiUnicode.eot');
+    src: local('Li Alinur Projapoti Unicode'), local('fonts/alinurprojapoti/LiAlinurProjapotiUnicode'),
+        url('fonts/alinurprojapoti/LiAlinurProjapotiUnicode.eot?#iefix') format('embedded-opentype'),
+        url('fonts/alinurprojapoti/LiAlinurProjapotiUnicode.woff2') format('woff2'),
+        url('fonts/alinurprojapoti/LiAlinurProjapotiUnicode.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Boshonto', sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    margin: 4em;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 4.1rem;
+    margin: 0;
+}
+
+nav ul li > a {
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    position: relative;
+}
+
+nav ul li > a.active:before {
+    position: absolute;
+    content: "";
+    width: 1.5rem;
+    height: 1px;
+    border-bottom: 2px solid #000;
+    bottom: -5px;
+}
+
+nav ul li > a:before {
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 1px;
+    border-bottom: 2px solid grey;
+    bottom: -5px;
+    transition: width .3s;
+}
+
+/* Hero Section */
+main {
+    display: flex;
+    gap: 8em;
+    margin-top: 10em;
+}
+
+.left-col {
+    width: 50%;
+}
+.right-col {
+    flex-grow: 1;
+}
+
+h1 {
+    font-size: 5.2rem;
+    font-weight: 400;
+    margin: 0;
+}
+p.subhead {
+    font-size: 1.8rem;;
+}
+
+.cta-btns {
+    margin: 5em 0;
+}
+.secondary-cta,
+.cta-btns {
+    display: flex;
+    gap: 2.5em;
+}
+
+.primary-cta {
+    background-color: #f55;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 1.9em;
+    padding: 1em 2em;
+}
+
+.secondary-cta {
+    font-size: 1.8rem;
+    text-decoration: none;
+    color: #000;
+    display: block;
+    padding: 1em 0;
+}
+
+.secondary-cta svg {
+    width: 30px;
+    padding-bottom: 0.25rem;
+    transition: transform 0.3s;
+}
+
+.news {
+    display: flex;
+    gap: 3em;
+    padding: 5em;
+    border: 1px solid #000;
+    border-radius: 0.8em;
+    position: relative;
+}
+
+.news::before {
+    position: absolute;
+    content: '';
+    background: url('../images/confetti.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 110px;
+    height: 110px;
+    top: -15px;
+    left: -15px;
+    z-index: 2;
+}
+
+p.employees {
+    font-size: 4.7rem;
+    margin: 0;
+    font-weight: 200;
+}
+
+p.details {
+    font-size: 1.4rem;
+}
+
+/* Right Column Gallery */
+.right-col {
+    display: grid;
+    gap: 2.3em;
+    grid-template-columns: repeat(2, auto);
+    grid-template-areas: 
+        "left ."
+        "left ."
+}
+
+.card {
+    border-radius: 0.8em;
+    padding: 1.1em;
+    display: flex;
+    align-items: end;
+    width: 90%;
+}
+
+.card1 {
+    grid-area: left;
+    background-image: url('../images/clothe1.jpg');
+    background-size: 235%;
+}
+
+.card2 {
+    background-image: url('../images/clothe2.jpg');
+    background-size: 100%;
+}
+
+.card3 {
+    background-image: url('../images/clothe3.jpg');
+    background-size: 100%;
+}
+
+.card1, .card2, .card3 {
+    background-position-x: center;
+    background-repeat: no-repeat;
+    transition: background-size 1200ms;
+}
+
+.card-details {
+    background-color: #fff;
+    border-radius: .6em;
+    padding: 2em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 1s;
+}
+
+.card-details a {
+    color: #000;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.card-details p {
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+p.product-price {
+    font-size: 1.8rem;
+}
+
+/* micro interaction */
+nav ul li > a:hover:before {
+    width: 1.5rem;
+}
+
+.primary-cta:hover {
+    background-color: #f66;
+}
+
+.secondary-cta:hover {
+    text-decoration: underline;
+}
+
+.secondary-cta:hover > svg {
+    transform: translateX(5px);
+}
+
+.card1:hover {
+    background-size: 370%;
+}
+.card2:hover, .card3:hover {
+    background-size: 170%;
+}
+
+.card:hover .card-details {
+    transform: translateY(-20px);
+}
+
+/* Intro Animation */
+.overlay {
+    position: absolute;
+    z-index: 999;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    animation: reveal 1s ease-in forwards;
+    transform-origin: bottom;
+}
+
+@keyframes reveal {
+    form {
+        transform: scaleY(1);
+    }
+    to {
+        transform: scaleY(0);
+    }
+}
+
+main {
+    animation: growIn 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+    transform: scale(.4);
+}
+
+@keyframes growIn {
+    to {
+        transform: scale(1);
+    }
+}
