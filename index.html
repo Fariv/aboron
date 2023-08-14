@@ -18,8 +18,18 @@
             <a href="#" id="top-left-logo">
                 <img src="images/logo.svg" alt="logo" >
             </a>
-            <nav>
+            <a href="#" id="burgerMenu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </a>
+            <nav id="navigationMenu">
                 <ul>
+                    <li>
+                        <a href="#" id="mobile-top-left-logo">
+                            <img src="images/logo.svg" alt="logo" >
+                        </a>
+                    </li>
                     <li>
                         <a class="active" href="#">হোম</a>
                     </li>
@@ -90,8 +100,40 @@
                     </div>
                 </div>
             </div>
+            
         </main>
     </div>
 
+    <script>
+        var opened = 0;
+        var topleftburgermenu = document.getElementById("burgerMenu");
+        var navigationMenu = document.getElementById("navigationMenu");
+        
+        topleftburgermenu.addEventListener("click", function() {
+            showSideMenu(1, 0);
+        });
+
+        window.addEventListener("click", function(e) {
+            
+            if (!topleftburgermenu.contains(e.target)) {
+
+                showSideMenu(0, '-120px');
+            }
+        });
+
+        function showSideMenu(isOpened, left) {
+            navigationMenu.style.left = left;
+            if (isOpened) {
+
+                topleftburgermenu.style.display = "none";
+                navigationMenu.style.position = "relative";
+            } else {
+
+                topleftburgermenu.style.display = "block";
+                navigationMenu.style.position = "absolute";
+            }
+            opened = isOpened;
+        }
+    </script>
 </body>
 </html>

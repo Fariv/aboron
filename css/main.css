@@ -25,6 +25,7 @@ body {
 }
 
 header {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -125,7 +126,7 @@ p.subhead {
 }
 
 .news {
-    display: flex;
+    display: flexbox;
     gap: 3em;
     padding: 5em;
     border: 1px solid #000;
@@ -147,6 +148,7 @@ p.subhead {
 }
 
 p.employees {
+    display: inline;
     font-size: 4.7rem;
     margin: 0;
     font-weight: 200;
@@ -281,3 +283,59 @@ main {
         transform: scale(1);
     }
 }
+
+#mobile-top-left-logo,
+header #burgerMenu {
+    display: none;
+}
+
+@media screen and (max-width: 786px) {
+    header {
+        flex-direction: column;
+        width: 145px;
+        align-items: flex-start;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    header #top-left-logo {
+        display: none;
+    }
+
+    #mobile-top-left-logo,
+    header #burgerMenu {
+        display: block;
+    }
+
+    header #burgerMenu > div {
+        width: 35px;
+        height: 5px;
+        background-color: black;
+        margin: 6px 0;
+    }
+
+    header #mobile-top-left-logo img {
+        width: 110px;
+    }
+
+    header nav {
+        position: absolute;
+        margin: 0;
+        left: -120px;
+        transition: left 1s;
+    }
+
+    header ul {
+        flex-direction: column;
+        padding-left: 0;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    .left-col, 
+    .right-col {
+        width: 100%;
+    }
+  }
