@@ -33,6 +33,8 @@ header {
 
 nav {
     margin: 4em;
+    margin-left: 0;
+    position: relative;
 }
 
 nav ul {

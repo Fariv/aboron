@@ -115,7 +115,7 @@
 
         window.addEventListener("click", function(e) {
             
-            if (!topleftburgermenu.contains(e.target)) {
+            if (!topleftburgermenu.contains(e.target) && window.getComputedStyle(document.getElementById('mobile-top-left-logo')).display !== "none") {
 
                 showSideMenu(0, '-120px');
             }
@@ -130,9 +130,8 @@
             } else {
 
                 setTimeout(function() {
-
                     topleftburgermenu.style.display = "block";
-                    navigationMenu.style.position = "absolute";
+                    navigationMenu.removeAttribute("style");
                 }, 1000);
             }
             opened = isOpened;
