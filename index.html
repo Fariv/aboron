@@ -129,8 +129,11 @@
                 navigationMenu.style.position = "relative";
             } else {
 
-                topleftburgermenu.style.display = "block";
-                navigationMenu.style.position = "absolute";
+                setTimeout(function() {
+
+                    topleftburgermenu.style.display = "block";
+                    navigationMenu.style.position = "absolute";
+                }, 1000);
             }
             opened = isOpened;
         }

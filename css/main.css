@@ -168,6 +168,7 @@ p.details {
         "left ."
 }
 
+
 .card {
     border-radius: 0.8em;
     padding: 1.1em;
@@ -332,10 +333,37 @@ header #burgerMenu {
 
     main {
         flex-direction: column;
+        padding: 15px;
+        margin-top: 0;
     }
 
     .left-col, 
     .right-col {
         width: 100%;
+    }
+
+    .right-col {
+        display: grid;
+        grid-template-columns: repeat(1, auto);
+        grid-template-areas: 
+            "left left"
+            "right-left right-right"
+    }
+
+    .card1 {
+        height: 700px;
+        width: 95%;
+    }
+
+    .card2 {
+        grid-area: right-left;
+        height: 350px;
+        width: 90%;
+    }
+    
+    .card3 {
+        grid-area: right-right;
+        height: 350px;
+        width: 90%;
     }
   }
